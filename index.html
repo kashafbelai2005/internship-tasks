@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="card">
+    <h1>🌤️ Weather App</h1>
+
+    <!-- Search Box -->
+    <div class="search-row">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button onclick="searchWeather()">Search</button>
+    </div>
+
+    <!-- Location Button -->
+    <button class="btn-location" onclick="getLocation()">
+      📍 Use My Location
+    </button>
+
+    <!-- Celsius / Fahrenheit Toggle -->
+    <div class="unit-toggle">
+      <button class="unit-btn active" id="btnC" onclick="setUnit('metric')">°C</button>
+      <button class="unit-btn" id="btnF" onclick="setUnit('imperial')">°F</button>
+    </div>
+
+    <!-- Error Message -->
+    <div class="error" id="errorBox"></div>
+
+    <!-- Loading Text -->
+    <div class="loading" id="loadingBox">
+      ⏳ Fetching weather...
+    </div>
+
+    <!-- Weather Result (hidden until search) -->
+    <div class="weather-result" id="weatherResult">
+      <div class="weather-icon" id="weatherIcon"></div>
+      <div class="city-name" id="cityName"></div>
+      <div class="country-date" id="countryDate"></div>
+      <div class="temp-main" id="tempMain"></div>
+      <div class="condition" id="condition"></div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-icon">💧</div>
+          <div class="stat-val" id="humidity"></div>
+          <div class="stat-label">Humidity</div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon">💨</div>
+          <div class="stat-val" id="wind"></div>
+          <div class="stat-label">Wind</div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon">👁️</div>
+          <div class="stat-val" id="visibility"></div>
+          <div class="stat-label">Visibility</div>
+        </div>
+      </div>
+
+      <div class="feels-row">
+        <span>Feels like: <strong id="feelsLike"></strong></span>
+        <span>Pressure: <strong id="pressure"></strong></span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

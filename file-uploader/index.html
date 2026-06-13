@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>File Uploader</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>📁 Drag & Drop File Uploader</h1>
+
+    <!-- Drop Area -->
+    <div class="drop-area" id="dropArea">
+      <div class="drop-icon">📂</div>
+      <p class="drop-text">Drag & drop your image here</p>
+      <p class="drop-sub">or</p>
+      <label class="browse-btn">
+        Browse File
+        <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.gif" hidden />
+      </label>
+      <p class="allowed">Allowed: JPG, PNG, GIF</p>
+    </div>
+
+    <!-- Error Message -->
+    <div class="error" id="errorBox"></div>
+
+    <!-- Progress Bar -->
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-label">
+        <span>Uploading...</span>
+        <span id="progressPercent">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <!-- Preview Section -->
+    <div class="preview-section" id="previewSection">
+      <h2>Uploaded Images</h2>
+      <div class="preview-grid" id="previewGrid"></div>
+      <button class="clear-btn" onclick="clearAll()">🗑️ Clear All</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
